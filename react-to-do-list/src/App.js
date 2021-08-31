@@ -2,12 +2,14 @@ import React from 'react';
 import { useState } from 'react';
 import './App.css';
 import ToDoForm from './components/ToDoForm/ToDoForm';
-import ToDo from './components/ToDo/ToDo';
+import ToDoTable from './components/ToDoTable/ToDoTable';
 
 function App() {
+
   // Пробую использовать хуки для того, чтобы не 
   // делать классовый компонент и быть модным
   const [todoList, setTodoList] = useState([]);
+
   const addTask = (userInput) => {
     if (!userInput)
       return;
@@ -23,16 +25,16 @@ function App() {
   const removeTask = (id) => {
     console.log('debug');
     setTodoList(todoList.filter((todo) => todo.id !== id));
-  }
+  };
 
   const completeTask = (id) => {
     console.log('хукуку');
     setTodoList(todoList.map(todo => todo.id === id ? { ...todo, statusCompleted: true } : todo));
-  }
+  };
 
   return (
-    <div className="App">
-      <header>
+    <div className="container">
+      <header className="centered">
         <h1>Задач всего: {todoList.length}</h1>
       </header>
       <hr />
@@ -40,19 +42,10 @@ function App() {
         <ToDoForm addTask={addTask} />
       </div>
       <hr />
-      <div>
-        {
-          todoList.map(todo => {
-            return (
-              <ToDo
-                key={todo.id}
-                todo={todo}
-                removeTask={removeTask}
-                completeTask={completeTask} />
-            )
-          })
-        }
-      </div>
+      <ToDoTable 
+        todoList={todoList}  
+        removeTask={removeTask}
+        completeTask={completeTask}/>
     </div>
   );
 }
