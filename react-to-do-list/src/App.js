@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './App.css';
 import ToDoForm from './components/ToDoForm/ToDoForm';
 import ToDoTable from './components/ToDoTable/ToDoTable';
+import PerfectCounter from './components/PerfectCounter/PerfectCounter';
 
 function App() {
 
@@ -46,6 +47,8 @@ function App() {
         todoList={todoList}  
         removeTask={removeTask}
         completeTask={completeTask}/>
+      <hr />
+      <PerfectCounter />
     </div>
   );
 }
