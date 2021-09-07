@@ -4,6 +4,7 @@ import './App.css';
 import ToDoForm from './components/ToDoForm/ToDoForm';
 import ToDoTable from './components/ToDoTable/ToDoTable';
 import PerfectCounter from './components/PerfectCounter/PerfectCounter';
+import Layout from './hoc/Layout/Layout';
 
 function App() {
 
@@ -34,22 +35,22 @@ function App() {
   };
 
   return (
-    <div className="container">
-      <header className="centered">
-        <h1>Задач всего: {todoList.length}</h1>
-      </header>
-      <hr />
-      <div>
-        <ToDoForm addTask={addTask} />
-      </div>
-      <hr />
-      <ToDoTable 
-        todoList={todoList}  
-        removeTask={removeTask}
-        completeTask={completeTask}/>
-      <hr />
-      <PerfectCounter />
-    </div>
+    <Layout>
+        <header>
+          <h1>Задач всего: {todoList.length}</h1>
+        </header>
+        <hr />
+        <div>
+          <ToDoForm addTask={addTask} />
+        </div>
+        <hr />
+        <ToDoTable
+          todoList={todoList}
+          removeTask={removeTask}
+          completeTask={completeTask} />
+        <hr />
+        <PerfectCounter />
+    </Layout>
   );
 }
 

@@ -1,4 +1,5 @@
 table {
+  width: inherit;
   font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
   text-align: left;
   border-collapse: separate;
@@ -26,16 +27,4 @@ table {
 
   .rounded {
     border-radius: 3px;
-  }
-
-  .container {
-    width: 50%;
-    top: 50%;
-    left: 25%;
-    justify-content: center;
-    position: relative;
-  }
-
-  .centered {
-    text-align: center;
   }

@@ -5,11 +5,14 @@ import ToDo from '../../components/ToDo/ToDo';
 export default function ToDoTable(props) {
     return (
         <table>
-            <tr>
-                <th>Текст задачи</th>
-                <th>Выполнить</th>
-                <th>Удалить</th>
-            </tr>
+            <thead>
+                <tr>
+                    <td>Текст задачи</td>
+                    <td>Выполнить</td>
+                    <td>Удалить</td>
+                </tr>
+            </thead>
+            <tbody>
             {
                 props.todoList.map(todo => {
                     return (
@@ -21,6 +24,7 @@ export default function ToDoTable(props) {
                     )
                 })
             }
+            </tbody>
         </table>
     );
 }
