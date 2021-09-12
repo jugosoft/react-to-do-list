@@ -5,6 +5,7 @@ import ToDoForm from './components/ToDoForm/ToDoForm';
 import ToDoTable from './components/ToDoTable/ToDoTable';
 import PerfectCounter from './components/PerfectCounter/PerfectCounter';
 import Layout from './hoc/Layout/Layout';
+import Quiz from './containers/Quiz/Quiz';
 
 function App() {
 
@@ -50,6 +51,8 @@ function App() {
           completeTask={completeTask} />
         <hr />
         <PerfectCounter />
+        <hr />
+        <Quiz />
     </Layout>
   );
 }
