@@ -4,26 +4,23 @@ import './CurrentTask.css';
 
 export default function CurrentTask(props) {
 
-    const handleClick = function (event) {
-        console.log(event);
-    }
-
     return(
         <div className="CurrentTask">
             <p>
                 <span>
                     <strong>
-                        {props.question}
+                    {props.currentNumber + 1}.{props.question}
                     </strong>
                 </span>
                 <small>
-                    currentNumber
+                    Текущий вопрос - {props.currentNumber + 1} из {props.quizLength}
                 </small>
             </p>
 
             <AnswersList
                 answers={props.answers} 
-                handleClick={handleClick}/>
+                handleClick={props.handleClick}
+                error={props.error}/>
         </div>
     );
 }
