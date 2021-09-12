@@ -10,7 +10,8 @@ export default function AnswersList (props) {
                     return(
                         <AnswersItem 
                             key={index}
-                            answer={answer}/>
+                            answer={answer}
+                            handleClick={props.handleClick}/>
                     );
                 })
             }

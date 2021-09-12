@@ -3,12 +3,17 @@ import AnswersList from '../../components/CurrentTask/AnswersList/AnswersList';
 import './CurrentTask.css';
 
 export default function CurrentTask(props) {
+
+    const handleClick = function (event) {
+        console.log(event);
+    }
+
     return(
         <div className="CurrentTask">
             <p>
                 <span>
                     <strong>
-                        Как дела?
+                        {props.question}
                     </strong>
                 </span>
                 <small>
@@ -17,7 +22,8 @@ export default function CurrentTask(props) {
             </p>
 
             <AnswersList
-                answers={props.answers} />
+                answers={props.answers} 
+                handleClick={handleClick}/>
         </div>
     );
 }

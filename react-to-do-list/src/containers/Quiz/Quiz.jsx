@@ -8,14 +8,16 @@ class Quiz extends React.Component {
         this.state = {
             currentNumber: 0,
             quiz: [
-            {
+            {   
+                question: 'Тестовый вопрос',
+                correctAnswer: 1,
                 answers: [
-                    { text: 'Заебись' },
-                    { text: 'В натуре' },
-                    { text: 'Чётко' },
-                    { text: 'Пацаны' },
-                    { text: 'Ваще ребята' },
-                    { text: '123_test' }
+                    { text: 'Заебись', id:1 },
+                    { text: 'В натуре', id:2 },
+                    { text: 'Чётко', id:3 },
+                    { text: 'Пацаны', id:4 },
+                    { text: 'Ваще ребята', id:5 },
+                    { text: '123_test', id:6 }
                 ]
             }
         ]
@@ -29,7 +31,8 @@ class Quiz extends React.Component {
                         <h1>Quiz</h1>
                     </div>
                     <CurrentTask 
-                        answers={this.state.quiz[0].answers} />
+                        answers={this.state.quiz[0].answers} 
+                        question={this.state.quiz[0].question} />
                 </div>
             </div>
         );
