@@ -1,8 +1,13 @@
 .Quiz {
     border: 1px solid black;
     display: flex;
-    justify-content: center;
+    /*flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;    
+    justify-content: space-evenly;
+    */
     padding: 10px;
+    flex-grow: 1;
     background: linear-gradient(0deg, #5041b2 0%, #7969c6 100%);
     transition: background 2s;
 }
@@ -16,4 +21,8 @@
 .Quiz h1 {
     color: blanchedalmond;
     margin-left: 10px;
+}
+
+.QuizWrapper {
+    width: 200px;
 }
