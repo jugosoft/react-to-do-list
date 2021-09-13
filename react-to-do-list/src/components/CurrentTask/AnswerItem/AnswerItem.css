@@ -16,3 +16,15 @@
     cursor: pointer;
     transition: background-color 1s;
 }
+
+.error {
+    border-radius: 3px;
+    transition: background-color 1s;
+    background-color: rgb(136, 74, 58);
+}
+
+.success {
+    border-radius: 3px;
+    transition: background-color 1s;
+    background-color: rgb(102, 202, 102);
+}

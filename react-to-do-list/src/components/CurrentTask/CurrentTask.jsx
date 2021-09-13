@@ -12,15 +12,18 @@ export default function CurrentTask(props) {
                     {props.currentNumber + 1}.{props.question}
                     </strong>
                 </span>
+                <span>|</span>
                 <small>
-                    Текущий вопрос - {props.currentNumber + 1} из {props.quizLength}
+                    {props.currentNumber + 1} из {props.quizLength}
                 </small>
             </p>
 
             <AnswersList
                 answers={props.answers} 
                 handleClick={props.handleClick}
-                error={props.error}/>
+                error={props.error}
+                answerState={props.answerState}
+                answersEnum={props.answersEnum}/>
         </div>
     );
 }

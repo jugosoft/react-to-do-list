@@ -3,15 +3,9 @@ import AnswersItem from '../AnswerItem/AnswerItem';
 import './AnswersList.css';
 
 export default function AnswersList (props) {
-    
-    let className ="AnswersList";
-    if (props.error) {
-        className += " error";
-    }
 
-    
     return(
-        <ul className={className}>
+        <ul className="AnswersList">
             {
                 props.answers.map((answer, index) => {
                     return(
@@ -19,7 +13,9 @@ export default function AnswersList (props) {
                             key={index}
                             answer={answer}
                             handleClick={props.handleClick}
-                            error={props.error}/>
+                            error={props.error}
+                            answerState={props.answerState}
+                            answersEnum={props.answersEnum}/>
                     );
                 })
             }

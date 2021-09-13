@@ -1,5 +1,7 @@
 .CurrentTask {
+    width: 300px;
     padding: 20px;
+    margin: 0 10px;
     color: #fff;
     border: 2px solid white;
     border-radius: 5px;
