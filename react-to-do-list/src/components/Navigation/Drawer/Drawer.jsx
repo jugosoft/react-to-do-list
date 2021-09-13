@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react';
 import './Drawer.css';
+import Backdrop from '../Backdrop/Backdrop';
 
 export default class Drawer extends React.Component {
 
@@ -40,6 +41,7 @@ export default class Drawer extends React.Component {
             cls.push('closed');
         }
         return (
+            <React.Fragment>
             <nav className={cls.join(' ')}>
                 <ul>
                     {
@@ -47,6 +49,8 @@ export default class Drawer extends React.Component {
                     }
                 </ul>
             </nav>
+            { this.props.isOpen ? <Backdrop onCloseBackdrop={this.props.onCloseBackdrop}/> : null }
+            </React.Fragment>
         );
     }
 }

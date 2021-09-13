@@ -9,8 +9,6 @@ export default function FinishedTask(props) {
         return total;
     }, 0);
 
-    debugger;
-
     return (
         <div className="FinishedTask">
             <p>
@@ -21,8 +19,13 @@ export default function FinishedTask(props) {
                     props.results.map((result, index) => {
                         return (
                             <li key={index}>
-                                <strong>1 ----</strong>
-                                <i className="fa fa-times"></i>
+                                <strong>{index}</strong>
+                                {
+                                    result.toString() === 'success' 
+                                    ? <i className="fa fa-check" />
+                                    : <i className="fa fa-times" />
+                                }
+                                
                             </li>
                         );
                     })

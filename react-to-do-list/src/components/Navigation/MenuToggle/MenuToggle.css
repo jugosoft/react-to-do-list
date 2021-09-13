@@ -1,6 +1,6 @@
 .MenuToggle {
     position: fixed;
-    color: #000;
+    color: rgb(51, 48, 48);
     cursor: pointer;
     font-size: 35px;
     top: 10px;

@@ -8,9 +8,10 @@
     max-width: 350px;
     padding: 20px 10px;
     box-sizing: border-box;
-    background-color: green;
+    background-color: rgb(255, 255, 255);
     transform: translateX(0px);
     transition: transform 1s;
+    z-index: 100;
 }
 
 .Drawer.closed {
@@ -24,24 +25,21 @@
 }
 
 .Drawer ul li {
+    border-radius: 5px;
+    text-align: center;
     margin-top: 20px;
-    background-color: blue;
-}
-
-.Drawer ul li {
-    margin-top: 20px;
-    background-color: blue;
+    background-color: rgb(204, 204, 211);
 }
 
 .Drawer ul li a {
-    color: yellow;
+    
     text-decoration: none;
     position: relative;
     font-size: 30px;
-    background-color: blue;
     transition: 1s;
 }
 
 .Drawer ul li a:hover, .active{
     opacity: 0.5;
+    border-radius: 5px;
 }

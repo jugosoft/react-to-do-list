@@ -18,12 +18,19 @@ export default class Layout extends React.Component {
         });
     }
 
+    onCloseBackdrop = () => {
+        this.setState({
+            isOpen: false
+        });
+    }
+
     render() {
         return (
             <div className={'Layout'}>
 
                 <Drawer 
-                    isOpen={this.state.isOpen}/>
+                    isOpen={this.state.isOpen}
+                    onCloseBackdrop={this.onCloseBackdrop}/>
 
                 <MenuToggle
                     onToggle={this.toggleMenu}
