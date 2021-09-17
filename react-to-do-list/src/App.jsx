@@ -1,11 +1,16 @@
 import React from 'react';
 import { useState } from 'react';
+import { Route, Switch, Redirect } from 'react-router';
 import './App.css';
-import ToDoForm from './components/ToDoForm/ToDoForm';
-import ToDoTable from './components/ToDoTable/ToDoTable';
+
+import ToDoApp from './components/ToDoApp/ToDoApp';
+
 import PerfectCounter from './components/PerfectCounter/PerfectCounter';
 import Layout from './hoc/Layout/Layout';
 import Quiz from './containers/Quiz/Quiz';
+import QuizList from './containers/QuizList/QuizList';
+import CreateQuiz from './containers/CreateQuiz/CreateQuiz';
+import Auth from './containers/Auth/Auth';
 
 function App() {
 
@@ -31,28 +36,23 @@ function App() {
   };
 
   const completeTask = (id) => {
-    console.log('хукуку');
     setTodoList(todoList.map(todo => todo.id === id ? { ...todo, statusCompleted: true } : todo));
   };
 
   return (
     <Layout>
-        <header>
-          <h1>Задач всего: {todoList.length}</h1>
-        </header>
-        <hr />
-        <div>
-          <ToDoForm addTask={addTask} />
-        </div>
-        <hr />
-        <ToDoTable
-          todoList={todoList}
-          removeTask={removeTask}
-          completeTask={completeTask} />
-        <hr />
-        <PerfectCounter />
-        <hr />
-        <Quiz />
+      <Switch>
+        
+        <Route path="/todo" render={(props) => (<ToDoApp {...props} todoList={todoList} removeTask={removeTask} addTask={addTask} completeTask={completeTask} />)} />
+        <Route path="/counter" component={PerfectCounter} />
+        <Route path="/quiz" component={Quiz} />
+        <Route path="/quizlist" component={QuizList} />
+        <Route path="/createquiz" component={CreateQuiz} />
+        <Route path="/auth" component={Auth} />
+        <Route path="/" component={Quiz} />
+        {/* <Redirect /> */}
+      </Switch>
+
     </Layout>
   );
 }

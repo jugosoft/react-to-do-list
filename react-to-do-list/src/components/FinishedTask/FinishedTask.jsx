@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './FinishedTask.css';
 
 export default function FinishedTask(props) {
@@ -21,11 +22,11 @@ export default function FinishedTask(props) {
                             <li key={index}>
                                 <strong>{index}</strong>
                                 {
-                                    result.toString() === 'success' 
-                                    ? <i className="fa fa-check" />
-                                    : <i className="fa fa-times" />
+                                    result.toString() === 'success'
+                                        ? <i className="fa fa-check" />
+                                        : <i className="fa fa-times" />
                                 }
-                                
+
                             </li>
                         );
                     })
@@ -33,6 +34,9 @@ export default function FinishedTask(props) {
             </ul>
             <div>
                 <button onClick={props.handleRetry}>Повторить</button>
+                <Link to="/quizlist">
+                    <button onClick={props.handleRetry}>К списку тестов</button>
+                </Link>
             </div>
         </div>
     );
