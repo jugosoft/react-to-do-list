@@ -19,15 +19,16 @@ const reducer = (state = stateInitial, action) => {
         case 'ADD':
             return {
                 ...state,
-                counter: state.counter + 1
+                counter: action.value ? state.counter + action.value : state.counter + 1
             }
         case 'SUB':
             return {
                 ...state,
-                counter: state.counter - 2
+                counter: action.value ? state.counter - action.value : state.counter - 2
             }
         case 'NULL':
             return {
+                ...state,
                 object: null
             }
     }
@@ -36,7 +37,9 @@ const reducer = (state = stateInitial, action) => {
 
 // Store - 
 const store = redux.createStore(reducer);
-console.debug(store.getState());
+store.subscribe(() => {
+    console.log(store.getState());
+})
 
 // Action - 
 const actionAdd = {
@@ -44,7 +47,5 @@ const actionAdd = {
 };
 
 store.dispatch(actionAdd);
-console.debug(store.getState());
 
-store.dispatch(actionAdd);
-console.debug(store.getState());
+store.dispatch({type: 'ADD', value: 100});
