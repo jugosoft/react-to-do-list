@@ -51,7 +51,7 @@ export default class Drawer extends React.Component {
     }
 
     getLinks = function () {
-        return this.state.links.map((link, index) => {
+        return this.state.links.map((link) => {
             return (
                 <li key={link.id} onClick={this.onClose}>
                     <NavLink to={link.to} exact={link.exact} activeClassName="active">{link.id}.&nbsp;{link.name} </NavLink>

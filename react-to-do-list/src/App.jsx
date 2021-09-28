@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
-import { Route, Switch, Redirect } from 'react-router';
+import { Route, Switch } from 'react-router';
 import './App.css';
 
 import ToDoApp from './components/ToDoApp/ToDoApp';
@@ -31,7 +31,6 @@ function App() {
   };
 
   const removeTask = (id) => {
-    console.log('debug');
     setTodoList(todoList.filter((todo) => todo.id !== id));
   };
 
@@ -49,8 +48,7 @@ function App() {
         <Route path="/quizlist" component={QuizList} />
         <Route path="/createquiz" component={CreateQuiz} />
         <Route path="/auth" component={Auth} />
-        <Route path="/" component={Quiz} />
-        {/* <Redirect /> */}
+        <Route path="/" component={PerfectCounter} />
       </Switch>
 
     </Layout>

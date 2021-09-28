@@ -12,7 +12,7 @@ const store = createStore(rootReducer);
 
 // Наше приложение
 const app = (
-  <Provider>
+  <Provider store={store}>
     <BrowserRouter>
       <App />
     </BrowserRouter>
