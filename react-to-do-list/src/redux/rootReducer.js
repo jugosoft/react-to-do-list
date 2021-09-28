@@ -7,12 +7,12 @@ export default function rootReducer(state = initialState, action) {
         case 'ADD':
             return {
                 counter: state.counter + 1
-            }
+            };
         case 'SUB':
             return {
-                // ...state,
-                counter: state.counter - 1
+                counter: state.counter + 1
             };
+
         default:
             return state;
     }
