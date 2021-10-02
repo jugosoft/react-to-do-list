@@ -3,8 +3,6 @@ import {connect} from 'react-redux';
 
 class PerfectCounter extends React.Component {
     render() {
-        console.log('APP', this.props);
-        debugger
         return (
             <React.Fragment>
                 <div>
