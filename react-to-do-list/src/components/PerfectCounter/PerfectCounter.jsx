@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
+import { add, sub, addNumber, reset } from '../../redux/actions/actions';
 
 class PerfectCounter extends React.Component {
     render() {
@@ -14,6 +15,7 @@ class PerfectCounter extends React.Component {
                 </div>
                 <div>
                     <button onClick={this.props.addNumber}>Add 228</button>
+                    <button onClick={this.props.reset}>Reset</button>
                 </div>
             </React.Fragment>
         )
@@ -30,12 +32,13 @@ function mapStateToProps(state) {
 // позволяет передать экшены редьюсера как пропсы в компонент
 function mapDispatchToProps(dispatch) {
     return {
-        increase: () => dispatch({type: 'ADD'}),
-        decrease: () => dispatch({type: 'SUB'}),
+        increase: () => dispatch(add()),
+        decrease: () => dispatch(sub()),
         // Можно и другим способом уведомлять редьюсер
         addNumber: function () {
-            return dispatch({type: 'ADD_NUMBER', payload: {value: 228}});
-        }
+            return dispatch(addNumber(228));
+        },
+        reset: () => dispatch(reset())
     };
 }
 
