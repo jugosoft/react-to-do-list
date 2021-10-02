@@ -14,6 +14,9 @@ class PerfectCounter extends React.Component {
                     <button onClick={this.props.increase}>Increase</button>
                     <button onClick={this.props.decrease}>Decrease</button>
                 </div>
+                <div>
+                    <button onClick={this.props.addNumber}>Add 228</button>
+                </div>
             </React.Fragment>
         )
     }
@@ -22,7 +25,6 @@ class PerfectCounter extends React.Component {
 // Позволяет избавиться от локального стейта
 function mapStateToProps(state) {
     return {
-        ...state,
         counter: state.counter
     };
 }
@@ -31,7 +33,11 @@ function mapStateToProps(state) {
 function mapDispatchToProps(dispatch) {
     return {
         increase: () => dispatch({type: 'ADD'}),
-        decrease: () => dispatch({type: 'SUB'})
+        decrease: () => dispatch({type: 'SUB'}),
+        // Можно и другим способом уведомлять редьюсер
+        addNumber: function () {
+            return dispatch({type: 'ADD_NUMBER', payload: {value: 228}});
+        }
     };
 }
 
