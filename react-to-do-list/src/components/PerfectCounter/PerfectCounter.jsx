@@ -25,7 +25,7 @@ class PerfectCounter extends React.Component {
 // Позволяет избавиться от локального стейта
 function mapStateToProps(state) {
     return {
-        counter: state.counter
+        counter: state.PerfectCounter.counter
     };
 }
 

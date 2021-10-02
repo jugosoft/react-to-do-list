@@ -1,24 +1,6 @@
-const initialState = {
-    counter: 100
-};
+import { combineReducers } from 'redux';
+import PerfectCounter from './PerfectCounter';
 
-export default function rootReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'ADD':
-            return {
-                counter: state.counter + 1
-            };
-        case 'SUB':
-            return {
-                counter: state.counter + 1
-            };
-        case 'ADD_NUMBER':
-            return {
-                counter: state.counter + action.payload.value
-            }
-
-        default:
-            return state;
-    }
-
-}
+export default combineReducers({
+    PerfectCounter
+});
