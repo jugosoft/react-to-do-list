@@ -12,6 +12,15 @@ export function sub() {
     }
 }
 
+export function onAsyncAdd() {
+    return (dispatch) => {
+        setTimeout(() => {
+            dispatch(addNumber(3000));
+        }, 5000);
+        // type: SUB
+    }
+}
+
 export function addNumber(number) {
     return {
         type: ADD_NUMBER,

@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import { add, sub, addNumber, reset } from '../../redux/actions/actions';
+import { add, sub, addNumber, onAsyncAdd, reset } from '../../redux/actions/actions';
 
 class PerfectCounter extends React.Component {
     render() {
@@ -16,6 +16,9 @@ class PerfectCounter extends React.Component {
                 <div>
                     <button onClick={this.props.addNumber}>Add 228</button>
                     <button onClick={this.props.reset}>Reset</button>
+                </div>
+                <div>
+                    <button onClick={this.props.onAsyncAdd}>Async 100</button>
                 </div>
             </React.Fragment>
         )
@@ -38,7 +41,8 @@ function mapDispatchToProps(dispatch) {
         addNumber: function () {
             return dispatch(addNumber(228));
         },
-        reset: () => dispatch(reset())
+        reset: () => dispatch(reset()),
+        onAsyncAdd: () => dispatch(onAsyncAdd())
     };
 }
 

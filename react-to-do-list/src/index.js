@@ -6,6 +6,7 @@ import App from './App';
 import { applyMiddleware, createStore } from 'redux';
 import { Provider } from 'react-redux';
 import rootReducer from './redux/rootReducer';
+import reduxThunk from 'redux-thunk';
 
 function loggerMiddleware(store) {
   return function (next) {
@@ -17,7 +18,7 @@ function loggerMiddleware(store) {
 }
 
 // Глобальный стор для приложения
-const store = createStore(rootReducer, applyMiddleware(loggerMiddleware));
+const store = createStore(rootReducer, applyMiddleware(loggerMiddleware, reduxThunk));
 
 // Наше приложение
 const app = (
