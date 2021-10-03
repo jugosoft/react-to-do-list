@@ -1,4 +1,4 @@
-import { ADD, ADD_NUMBER, RESET, SUB } from "./actionTypes";
+import { ADD, ADD_NUMBER, FETCH, RESET, SUB } from "./actionTypes";
 
 export function add() {
     return {
@@ -34,4 +34,33 @@ export function reset() {
     return {
         type: RESET
     }
+}
+
+export const receiveRandoms= (result) => ({
+    type: 'RECEIVE_RANDOMS',
+    items: result.map(child => child),
+    isLoaded: true
+  })
+
+  export const requestRandoms = () => ({
+    type: 'REQUEST_RANDOMS'
+  })
+
+export function fetchRandom() {
+    return dispatch => {
+        dispatch(requestRandoms());
+        return fetch('http://www.randomnumberapi.com/api/v1.0/random?min=100&max=1000&count=5', { mode: 'no-cors' })
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    return dispatch(receiveRandoms(result));
+                },
+                (error) => {
+                    return {
+                        isLoaded: true,
+                        error
+                    };
+                }
+            )
+    };
 }

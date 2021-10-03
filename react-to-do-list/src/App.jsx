@@ -6,6 +6,7 @@ import './App.css';
 import ToDoApp from './components/ToDoApp/ToDoApp';
 
 import PerfectCounter from './components/PerfectCounter/PerfectCounter';
+import AsyncComponent from './components/AsyncComponent/AsyncComponent';
 import Layout from './hoc/Layout/Layout';
 import Quiz from './containers/Quiz/Quiz';
 import QuizList from './containers/QuizList/QuizList';
@@ -40,6 +41,7 @@ function App() {
 
   return (
     <Layout>
+      <AsyncComponent />
       <Switch>
         
         <Route path="/todo" render={(props) => (<ToDoApp {...props} todoList={todoList} removeTask={removeTask} addTask={addTask} completeTask={completeTask} />)} />

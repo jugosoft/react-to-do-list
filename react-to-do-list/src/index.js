@@ -11,7 +11,7 @@ import reduxThunk from 'redux-thunk';
 function loggerMiddleware(store) {
   return function (next) {
     return function (action) {
-      console.log('MiddleWare', store.getState().PerfectCounter.counter, action);
+      console.log('MiddleWare', store.getState());
       return next(action);
     }
   }
