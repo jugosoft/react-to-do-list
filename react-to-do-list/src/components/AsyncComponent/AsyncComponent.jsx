@@ -19,8 +19,8 @@ class AsyncComponent extends React.Component {
             return <div>Загрузка...</div>;
         } else {
             return (
-                <ul>
-                    {this.props.items.map((item, index) => <li key={index}>{item}</li>)}&nbsp;
+                <ul style={{listStyle:'none'}}>
+                    {this.props.items.map((item, index) => <li style={{display:'inline'}} key={index}>&nbsp;{item}&nbsp;</li>)}
                 </ul>
             );
         }
